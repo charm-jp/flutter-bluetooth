@@ -562,8 +562,6 @@ public class FlutterBluetoothPlugin implements FlutterPlugin, MethodCallHandler,
     public void write(byte[] bytes) {
       try {
         outputStream.write(bytes);
-
-        Log.d("Write", byteArrayToHex(bytes));
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -585,8 +583,6 @@ public class FlutterBluetoothPlugin implements FlutterPlugin, MethodCallHandler,
         }
 
         buffer.flush();
-
-        Log.d("Read", byteArrayToHex(buffer.toByteArray()));
 
         return buffer.toByteArray();
       } catch (IOException e) {
